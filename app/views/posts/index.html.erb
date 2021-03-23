@@ -2,33 +2,7 @@
 
 <h1>Posts</h1>
 
-<%= form_with(model: @post, remote: true) do |form| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit data: {disable_with: "enviando"} %>
-  </div>
-<% end %>
+<%= render "form_title"%>
 
 
 <table>
@@ -55,5 +29,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Post', new_post_path %>
